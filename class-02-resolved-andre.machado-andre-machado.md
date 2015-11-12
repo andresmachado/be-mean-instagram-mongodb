@@ -18,7 +18,6 @@ switched to db be-mean-pokemons
 
 be-mean-instagram → 0.078GB
 
-
 local             → 0.078GB
 
 
@@ -28,7 +27,6 @@ local             → 0.078GB
 
 
 pokemons       → 0.000MB / 0.008MB
-
 
 system.indexes → 0.000MB / 0.008MB
 
@@ -140,6 +138,7 @@ Um ratinho venenoso do fofinho
 
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> db.pokemons.save(poke)
+
 Updated 1 existing record(s) in 2ms
 WriteResult({
   "nMatched": 1,
