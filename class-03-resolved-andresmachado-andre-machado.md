@@ -2,7 +2,7 @@
 # MongoDB - Aula 03 - Exercício
 autor: André Machado
 
-1. Liste todos Pokemons com a altura menor que 0.5;
+## Liste todos Pokemons com a altura menor que 0.5;
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {height: {$lt: 0.5}}
 
@@ -49,7 +49,7 @@ autor: André Machado
 }
 Fetched 4 record(s) in 2ms
 
-2. Liste todos Pokemons com a altura maior ou igual que 0.5;
+## Liste todos Pokemons com a altura maior ou igual que 0.5;
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {height: {$gte: 0.5}};
 
@@ -66,7 +66,7 @@ Fetched 4 record(s) in 2ms
 }
 Fetched 1 record(s) in 0ms
 
-3. Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama;
+## Liste todos Pokemons com a altura menor ou igual que 0.5 E do tipo grama;
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> var height = {height: {$lte: 0.5}};
 
@@ -87,7 +87,7 @@ Fetched 1 record(s) in 0ms
 }
 Fetched 1 record(s) in 1ms
 
-4. Liste todos Pokemons com o name `Pikachu` OU com attack menor ou igual que 0.5;
+## Liste todos Pokemons com o name `Pikachu` OU com attack menor ou igual que 0.5;
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> var name = {name: "Pikachu"};
 
@@ -128,7 +128,7 @@ Fetched 1 record(s) in 1ms
 }
 Fetched 3 record(s) in 0ms
 
-5. Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 0.5;
+## Liste todos Pokemons com o attack MAIOR OU IGUAL QUE 48 E com  height menor ou igual que 0.5;
 
 >AndrePC(mongod-3.0.7) be-mean-pokemons> var attack = {attack: {$gte: 48}};
 
