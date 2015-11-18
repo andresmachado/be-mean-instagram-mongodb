@@ -134,3 +134,104 @@ Retorna um objeto caso o campo **exista**;
 ### Sintaxe geral
 
 >db.collection.find({ campo: {$exists: true }});
+
+# Modulo MongoDB Aula 04
+
+## Funções vistas na aula
+
+> db.collection.update();
+
+### FUNÇÃO UPDATE
+
+O MongoDB altera os documentos de duas formas, `save` ou `update`. A diferença entre um e outro é que o **UPDATE** já atualiza o objeto direto, enquanto o **SAVE** precisa de uma query, passando os parâmetros.
+
+A função `update` recebe três parâmetros:
+
+1. query;
+2. modificação;
+3. options (não obrigatório).
+
+## Sintaxe do comando
+
+> db.colecao.update(query, mod, opt);
+
+**ATENÇÃO**: Este comando altera o registro por completo, substituindo todos os valores existentes pelos valores passados na variável MOD. Para correta utilização do `update()` utilize-o em conjunto com os `operadores de modificação`;
+
+Caso o campo não exista, ele será criado pela função.
+
+>Dica:
+>Para buscar dados de modo **unsensitive** basta colocar um **/i** após o campo que você deseja procurar.
+
+*Exemplo*
+
+> var query = {name:/testemon/i};
+
+## Operadores de modificação
+
+### `$set`
+
+Modifica um valor ou cria, caso ele não exista.
+
+**Sintaxe**
+
+{$set: {campo, valor}};
+
+### `$unset`
+
+Remove os campos de um registro
+
+**Sintaxe**
+
+{$unset: {campo: true/false}};
+
+### `$inc`
+
+Incrementa um valor no registro com a quantidade desejada. Para **decrenentar** um valor, basta passar um inteiro *negativo*
+
+**Sintaxe**
+
+{$inc: {campo, +/-valor}};
+
+>AndrePC(mongod-3.0.7) test> var mod = {$inc: {attack: 1}};
+AndrePC(mongod-3.0.7) test> db.pokemons.update(query, mod);
+Updated 1 existing record(s) in 1ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+Fetched 1 record(s) in 0ms
+
+## Operadores de array
+
+### `$push`
+
+Este operador adiciona valor ao campo do array, caso ele seja existente. Caso não exista o campo será criado do tipo *Array* adicionando o valor passado no `$push`. Se o campo existir e não for do tipo *Array* um erro ocorrerá.
+
+**Sintaxe**
+
+{$push: {campo: valor}};
+
+### `$pushAll`
+
+Funciona como o `$push`, mas passa valores como *Array*;
+
+**Sintaxe**
+
+{$pushAll: {campo: [valores]}};
+
+### `$pull`
+
+Remove valores de um array caso ele exista e seja do tipo *Array*
+
+**Sintaxe**
+
+{$pull: {campo: valor}};
+
+### `$pullAll`
+
+Funciona como o `$pull`, mas passa valores como *Array*;
+
+**Sintaxe**
+
+{$pullAll: {campo: [valores]}};
