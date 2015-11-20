@@ -1,24 +1,6 @@
 # MongoDB - Aula 04 - Exercício
 autor: André Machado
 
-## Indice de questões:
-
-[01 - Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.](#Adicionar-2-ataques-ao-mesmo-tempo-para-os-seguintes-pokemons:-Pikachu,-Squirtle,-Bulbassauro-e-Charmander.)
-
-[02 - Adicionar 1 movimento em todos os pokemons: desvio.](#Adicionar-1-movimento-em-todos-os-pokemons:-desvio.)
-
-[03 - Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".](#Adicionar-o-pokemon-AindaNaoExisteMon-caso-ele-não-exista-com-todos-os-dados-com-o-valor-null-e-a-descrição:-"Sem-maiores-informações".)
-
-[04 - Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.](#Pesquisar-todos-o-pokemons-que-possuam-o-ataque-investida-e-mais-um-que-você-adicionou,-escolha-seu-pokemon-favorito.)
-
-[05 - Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.](#Pesquisar-todos-os-pokemons-que-possuam-os-ataques-que-você-adicionou,-escolha-seu-pokemon-favorito.)
-
-[06 - Pesquisar todos os pokemons que não são do tipo elétrico.](#Pesquisar-todos-os-pokemons-que-não-são-do-tipo-elétrico.)
-
-[07 - Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.](#Pesquisar-todos-pokemons-que-tenham-o-ataque-investida-E-tenham-a-defesa-não-menor-ou-igual-a-49.)
-
-[08 - Remova todos os pokemons do tipo água e com attack menor que 50.](#Remova-todos-os-pokemons-do-tipo-água-e-com-attack-menor-que-50.)
-
 # Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {name: {$in: [/Pikachu/i,/bulbassauro/i,/squirtle/i,/charmander/i]}};
