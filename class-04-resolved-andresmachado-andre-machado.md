@@ -3,23 +3,23 @@ autor: André Machado
 
 ## Indice de questões:
 
-[01 - Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.](#Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.)
+[01 - Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.](#Adicionar-2-ataques-ao-mesmo-tempo-para-os-seguintes-pokemons:-Pikachu,-Squirtle,-Bulbassauro-e-Charmander.)
 
-[02 - Adicionar 1 movimento em todos os pokemons: desvio.](#Adicionar 1 movimento em todos os pokemons: desvio.)
+[02 - Adicionar 1 movimento em todos os pokemons: desvio.](#Adicionar-1-movimento-em-todos-os-pokemons:-desvio.)
 
-[03 - Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".](#Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".)
+[03 - Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".](#Adicionar-o-pokemon-AindaNaoExisteMon-caso-ele-não-exista-com-todos-os-dados-com-o-valor-null-e-a-descrição:-"Sem-maiores-informações".)
 
-[04 - Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.](#Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.)
+[04 - Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.](#Pesquisar-todos-o-pokemons-que-possuam-o-ataque-investida-e-mais-um-que-você-adicionou,-escolha-seu-pokemon-favorito.)
 
-[05 - Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.](#Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.)
+[05 - Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.](#Pesquisar-todos-os-pokemons-que-possuam-os-ataques-que-você-adicionou,-escolha-seu-pokemon-favorito.)
 
-[06 - Pesquisar todos os pokemons que não são do tipo elétrico.](#Pesquisar todos os pokemons que não são do tipo elétrico.)
+[06 - Pesquisar todos os pokemons que não são do tipo elétrico.](#Pesquisar-todos-os-pokemons-que-não-são-do-tipo-elétrico.)
 
-[07 - Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.](#Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.)
+[07 - Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.](#Pesquisar-todos-pokemons-que-tenham-o-ataque-investida-E-tenham-a-defesa-não-menor-ou-igual-a-49.)
 
-[08 - Remova todos os pokemons do tipo água e com attack menor que 50.](#Remova todos os pokemons do tipo água e com attack menor que 50.)
+[08 - Remova todos os pokemons do tipo água e com attack menor que 50.](#Remova-todos-os-pokemons-do-tipo-água-e-com-attack-menor-que-50.)
 
-## Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
+# Adicionar 2 ataques ao mesmo tempo para os seguintes pokemons: Pikachu, Squirtle, Bulbassauro e Charmander.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {name: {$in: [/Pikachu/i,/bulbassauro/i,/squirtle/i,/charmander/i]}};
 
@@ -99,7 +99,7 @@ autor: André Machado
 
 ---
 
-## Adicionar 1 movimento em todos os pokemons: desvio.
+# Adicionar 1 movimento em todos os pokemons: desvio.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {};
 
@@ -111,7 +111,7 @@ autor: André Machado
 
 ---
 
-## Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
+# Adicionar o pokemon AindaNaoExisteMon caso ele não exista com todos os dados com o valor null e a descrição: "Sem maiores informações".
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {name: /AindaNaoExisteMon/i}
 
@@ -143,7 +143,7 @@ Fetched 1 record(s) in 1
 
 ---
 
-## Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
+# Pesquisar todos o pokemons que possuam o ataque investida e mais um que você adicionou, escolha seu pokemon favorito.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {moves: {$in: ["investida"]}}
 
@@ -254,7 +254,8 @@ Fetched 1 record(s) in 1
 }
 
 ---
-## Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
+
+# Pesquisar todos os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {moves: {$in: ["tackle", "cabecada"]}}
 
@@ -329,7 +330,7 @@ Fetched 1 record(s) in 1
 
 ---
 
-## Pesquisar todos os pokemons que não são do tipo elétrico.
+# Pesquisar todos os pokemons que não são do tipo elétrico.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {type: {$ne: "eletrico"}};
 
@@ -484,7 +485,7 @@ Fetched 1 record(s) in 1
 
 ---
 
-## Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
+# Pesquisar todos pokemons que tenham o ataque investida E tenham a defesa não menor ou igual a 49.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{moves: {$in: ["investida"]}}, {attack: {$gt: 49}}]};
 
@@ -527,7 +528,8 @@ Fetched 1 record(s) in 1
 > Fetched 2 record(s) in 0ms
 
 ---
-## Remova todos os pokemons do tipo água e com attack menor que 50.
+
+# Remova todos os pokemons do tipo água e com attack menor que 50.
 
 > AndrePC(mongod-3.0.7) be-mean-pokemons> var query = {$and: [{type: "agua"}, {attack: {$lt: 50}}]}
 
