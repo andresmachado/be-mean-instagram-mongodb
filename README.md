@@ -27,11 +27,13 @@ Foi visto nessa aula como inserir e consultar registros no banco e como criar co
 
 # Módulo MongoDB Aula 3
 
-## Funções vistos na aula
+## Funções vistas na aula
 
 >db.find()
 
 >db.findOne()
+
+---
 
 Ao inserir objetos no MongoDB, ele adiciona um `_id`, chamado de **UUID** - *Underline Unique Identifier*.
 
@@ -45,9 +47,15 @@ O `UUID` é um identificador único formado por:
 
 > 3-bytes: contador, com valor aleatório.
 
-### Sintaxe de buscas no **MongoDB**
+---
 
->db.colecao.find({clausulas}, {campos})
+### FUNÇÃO `find()`
+
+Retorna os registros de acordo com os parâmetros passados para a função
+
+**Sintaxe**
+
+>db.colecao.find({query}, {campos})
 
 As buscas podem ser feitas através de variáveis.
 
@@ -263,8 +271,10 @@ Incrementa um valor no registro com a quantidade desejada. Para **decrenentar** 
 
 {$inc: {campo, +/-valor}};
 
->AndrePC(mongod-3.0.7) test> var mod = {$inc: {attack: 1}};
-AndrePC(mongod-3.0.7) test> db.pokemons.update(query, mod);
+> AndrePC(mongod-3.0.7) test> var mod = {$inc: {attack: 1}};
+
+> AndrePC(mongod-3.0.7) test> db.pokemons.update(query, mod);
+
 Updated 1 existing record(s) in 1ms
 WriteResult({
   "nMatched": 1,
@@ -355,7 +365,6 @@ Retorna os valores que NÃO são iguais ao valor passado. Este campo _**ACEITA E
 
 ---
 
-
 ## FUNÇÃO `DELETE`
 
 > db.collection.remove();
@@ -365,3 +374,93 @@ Este comando remove um registro da coleção.
 **ATENÇÃO**: Este valor é *multi: true*, caso não seja passado nenhum valor para ele, **TODOS** os registros serão apagados;
 
 Para deletar uma coleção inteira, basta utilizar o _**db.collection.drop**_;
+
+# Modulo MongoDB Aula 05
+
+### Funções vistas na aula
+
+> count();
+
+> distinct();
+
+> group();
+
+> limit().skip();
+
+> aggregate().
+
+**Dica**: Para uma pesquisa de documentos mais performatica, dê prioridade sempre a função `count()` ao invés do `find()`, pois o find trás todos os registros para a memória, o que pode ocasionar engasgos no seu MongoDB. Todos os argumentos passados para o `find()` podem ser passados para o `count()`;
+
+---
+
+### FUNÇÃO `count()`
+
+Conta a quantidade de registros de acordo com os parâmetros passados na função. Aceita _**Operadores aritméticos**_ como `$lte, $gte e etc`
+
+**Sintaxe**
+
+> db.collection.count({condicao1}, {condicao2}, ...)
+
+### FUNÇÃO `distinct()`
+
+Retorna quantos valores únicos de uma propriedade especifica.
+
+_Exemplo_
+
+> AndrePC(mongod-3.0.7) be-mean-instagram> db.restaurantes.distinct('borough');
+> [
+  "Bronx",
+  "Brooklyn",
+  "Manhattan",
+  "Queens",
+  "Staten Island",
+  "Missing"
+];
+
+É possivel também cascatear funções no `distinct()`:
+
+Para ordenar alfabeticamente:
+
+> AndrePC(mongod-3.0.7) be-mean-instagram> db.restaurantes.distinct('borough');
+
+> [
+  "Bronx",
+  "Brooklyn",
+  "Manhattan",
+  "Queens",
+  "Staten Island",
+  "Missing"
+]
+
+Para retornar a quantidade de propriedades:
+
+> AndrePC(mongod-3.0.7) be-mean-instagram> db.restaurantes.distinct('borough').length;
+
+>6
+
+### FUNÇÃO `limit().skip()`
+
+A função `limit()` limita o retorno de registros pela quantidade informada. A função `skip()` "pula" a quantidade de registros e começa a limitar a partir do valor informado. Como o retorno é paginado com indíce 0, você pode informar ao `skip()` qual pagina você quer limitar passando um **(valor * pagina)**
+
+_Exemplo_
+
+> db.collection.find({}, name: 1).limit(2).skip(2);
+
+Para limitação por página:
+
+> db.collection.find({}, name: 1).limit(10).skip(10 * 1);
+
+
+### FUNÇÃO `group()`
+
+Agrupa os resultados de forma mais perfomatica
+
+**Sintaxe**
+
+Para melhor visualizacao do uso do `group()` [veja a documentação](https://docs.mongodb.org/manual/reference/method/db.collection.group/);
+
+### FUNÇÃO `aggregate()`
+
+Retorna resultados agrupados de forma mais semântica que o `group()` e possui parâmetros próprios para cálculos de dados. Todos os parâmetros da função começam com o sinal de `$`
+
+Para melhor visualização do uso do `aggregate()` [veja a documentação](https://docs.mongodb.org/v3.0/reference/operator/aggregation/group/)
