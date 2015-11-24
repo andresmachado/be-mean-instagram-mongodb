@@ -361,12 +361,14 @@ autor: André Machado
 ---
 # 5. `group()` ou `aggregate()` contando a quantidade de pokemons de cada tipo;
 
-> db.pokemons.aggregate({
-  $group: {
-  _id: { type: "$types"},
-  totalByType: { $sum: 1 }
+> db.pokemons.aggregate([
+    { $unwind: '$types'},
+    { $group: {
+      _id: "$types",
+      count: { $sum: 1 }
+    }
   }
-})
+])
 
 ---
 

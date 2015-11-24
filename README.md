@@ -464,3 +464,18 @@ Para melhor visualizacao do uso do `group()` [veja a documentação](https://doc
 Retorna resultados agrupados de forma mais semântica que o `group()` e possui parâmetros próprios para cálculos de dados. Todos os parâmetros da função começam com o sinal de `$`
 
 Para melhor visualização do uso do `aggregate()` [veja a documentação](https://docs.mongodb.org/v3.0/reference/operator/aggregation/group/)
+
+
+# Modulo MongoDB Aula 06
+
+## Funções vistas na aula
+
+> db.invt.find(query)
+
+> db.invt.insert({dados})
+
+## Relacionamentos no MongoDB
+
+1 - Não existem JOINS no MongoDB;
+2 - Para criar um relacionamento, basta salvar o `_id` de uma **collection** em outra, com isso, criando um **inventário (`invt`)**;
+3 - As buscas são feitas manualmente;
